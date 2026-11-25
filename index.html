@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IA Trade Signals</title>
+<style>
+body {
+  margin: 0;
+  padding: 20px;
+  background: #101827;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+h1 { color: #36d6a0; }
+.card {
+  background: #1e293b;
+  padding: 18px;
+  margin: 15px 0;
+  border-radius: 12px;
+}
+button {
+  padding: 13px;
+  margin: 5px;
+  border: 0;
+  border-radius: 8px;
+  color: white;
+  font-weight: bold;
+}
+.call { background: #16a34a; }
+.put { background: #dc2626; }
+.wait { background: #64748b; }
+p { color: #cbd5e1; }
+</style>
+</head>
+<body>
+<h1>🤖 IA TRADE SIGNALS</h1>
+<p>Assistant intelligent d'analyse de marché</p>
+
+<div class="card">
+<h3>Marché</h3>
+<select id="market">
+<option>EUR/USD</option>
+<option>GBP/USD</option>
+<option>USD/JPY</option>
+<option>BTC/USD</option>
+<option>GOLD</option>
+</select>
+</div>
+
+<div class="card">
+<h3>Analyse du marché</h3>
+<p id="signal">En attente d'analyse</p>
+<button class="call" onclick="show('CALL')">CALL</button>
+<button class="put" onclick="show('PUT')">PUT</button>
+<button class="wait" onclick="show('NO TRADE')">NO TRADE</button>
+<p id="result">Aucun signal</p>
+</div>
+
+<div class="card">
+<h3>Gestion du risque</h3>
+<p>Risque : 1% maximum par opération (indicatif)</p>
+<p>Privilégier les configurations de qualité.</p>
+</div>
+
+<div class="card">
+<h3>Historique</h3>
+<p id="history">Aucune opération enregistrée</p>
+</div>
+
+<script>
+function show(signal) {
+ document.getElementById("result").innerText =
+ "Sélection : " + signal + " (test manuel)";
+ document.getElementById("history").innerText =
+ "Dernière sélection : " + signal;
+}
+</script>
+</body>
+</html>
